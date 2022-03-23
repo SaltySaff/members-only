@@ -1,11 +1,13 @@
-<div class="column is-half">
+<div class="column is-half is-offset-one-quarter">
   <% @posts.each do | post | %>
     <div class="box">
       <% if user_signed_in? %>
-        <%= link_to post.title, post %>
-          Poster: <%= post.user.username %>
-        <% else %>
-          <%= post.title %>
+        <strong><%= post.title %></strong>
+        <small>@<%= post.user.username %></small><br>
+        <%= post.body %>
+      <% else %>
+        <strong><%= post.title %></strong><br>
+        ...
       <% end %>
     </div>
   <% end %>
