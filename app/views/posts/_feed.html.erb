@@ -1,0 +1,12 @@
+<div class="column is-half">
+  <% @posts.each do | post | %>
+    <div class="box">
+      <% if user_signed_in? %>
+        <%= link_to post.title, post %>
+          Poster: <%= post.user.username %>
+        <% else %>
+          <%= post.title %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
